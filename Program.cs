@@ -19,7 +19,7 @@ namespace PPIDSpoof
                 parentProc += p.Id;
             }
 
-            //TODO: Make this work!!
+            //TODO: Make this work!! Process gets created successfully. Just needs to make it hidden so its less sus.
             /*if (parentProc == 0)
             {
                 Console.WriteLine("[-] Specified process does not exist.");
