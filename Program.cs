@@ -31,7 +31,7 @@ namespace PPIDSpoof
 
             Console.WriteLine("[*] New Parent PID Found: {0}", parentProc);
 
-            IntPtr procHandle = OpenProcess(ProcessAccessFlags.CreateProcess | ProcessAccessFlags.DuplicateHandle, false, parentProc);
+            IntPtr procHandle = OpenProcess(ProcessAccessFlags.CreateProcess, false, parentProc);
 
             IntPtr lpSize = IntPtr.Zero;
             InitializeProcThreadAttributeList(IntPtr.Zero, 2, 0, ref lpSize);
