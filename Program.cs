@@ -48,7 +48,7 @@ namespace PPIDSpoof
             UpdateProcThreadAttribute(siex.lpAttributeList, 0, (IntPtr)PROC_THREAD_ATTRIBUTE_MITIGATION_POLICY, lpMitigationPolicy, (IntPtr)IntPtr.Size, IntPtr.Zero, IntPtr.Zero);
 
             string app = @"C:\Windows\System32\svchost.exe";
-            bool procinit = CreateProcess(app, null, IntPtr.Zero, IntPtr.Zero, true, CreationFlags.SUSPENDED | CreationFlags.EXTENDED_STARTUPINFO_PRESENT, IntPtr.Zero, null, ref siex, ref pi);
+            bool procinit = CreateProcess(app, null, IntPtr.Zero, IntPtr.Zero, false, CreationFlags.SUSPENDED | CreationFlags.EXTENDED_STARTUPINFO_PRESENT, IntPtr.Zero, null, ref siex, ref pi);
             Console.WriteLine("[*] Process Created. Process ID: {0}", pi.dwProcessId);
             Console.ReadKey();
 
